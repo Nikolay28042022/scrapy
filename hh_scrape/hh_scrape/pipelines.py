@@ -14,7 +14,7 @@ class HhScrapePipeline:
 
     def process_item(self, item, spider):
         # Добавляем каждый элемент (данные с вакансий) в список
-        # self.data.append(item)
+
         collection = self.mongo_base[spider.name]
         collection.insert_one(item)
         return item
